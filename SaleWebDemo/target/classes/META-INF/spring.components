@@ -1,0 +1,13 @@
+com.nnt.controllers.IndexController=org.springframework.stereotype.Component
+com.nnt.pojo.Category=javax.persistence.Entity,javax.persistence.Table,javax.xml.bind.annotation.XmlRootElement,javax.persistence.NamedQueries
+com.nnt.pojo.Category_=javax.annotation.Generated,javax.persistence.metamodel.StaticMetamodel
+com.nnt.pojo.OrderDetail=javax.persistence.Entity,javax.persistence.Table,javax.xml.bind.annotation.XmlRootElement,javax.persistence.NamedQueries
+com.nnt.pojo.OrderDetail_=javax.annotation.Generated,javax.persistence.metamodel.StaticMetamodel
+com.nnt.pojo.Product=javax.persistence.Entity,javax.persistence.Table,javax.xml.bind.annotation.XmlRootElement,javax.persistence.NamedQueries
+com.nnt.pojo.Product_=javax.annotation.Generated,javax.persistence.metamodel.StaticMetamodel
+com.nnt.pojo.SaleOrder=javax.persistence.Entity,javax.persistence.Table,javax.xml.bind.annotation.XmlRootElement,javax.persistence.NamedQueries
+com.nnt.pojo.SaleOrder_=javax.annotation.Generated,javax.persistence.metamodel.StaticMetamodel
+com.nnt.pojo.User=javax.persistence.Entity,javax.persistence.Table,javax.xml.bind.annotation.XmlRootElement,javax.persistence.NamedQueries
+com.nnt.pojo.User_=javax.annotation.Generated,javax.persistence.metamodel.StaticMetamodel
+com.nnt.repository.impl.CategoryRepositoryImpl=org.springframework.stereotype.Component
+com.nnt.services.impl.CategoryServiceImpl=org.springframework.stereotype.Component

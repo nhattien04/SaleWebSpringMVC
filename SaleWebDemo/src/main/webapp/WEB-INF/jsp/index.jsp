@@ -26,7 +26,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0)">&#128293; Trang chủ</a>
                         </li>
-                        <c:forEach items="${categories}" var="c">                           
+                        <c:forEach items="${categories}" var="c">
                             <li class="nav-item">
                                 <a class="nav-link" href="javascript:void(0)">${c}</a>
                             </li>
@@ -46,7 +46,7 @@
             </div>
         </nav>
 
-        <div class="container-fluid">
+<div class="container-fluid">
             <div class="row">
                 <c:forEach items="${products}" var="p">
                     <div class="col-md-3 col-12" style="padding:20px;">

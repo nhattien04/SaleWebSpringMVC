@@ -20,7 +20,9 @@ import org.springframework.web.servlet.view.JstlView;
 @Configurable
 @EnableWebMvc
 @ComponentScan(basePackages = {
-    "com.nnt.controllers"
+    "com.nnt.controllers",
+    "com.nnt.repository",
+    "com.nnt.services",
 })
 public class WebAppContextConfig implements WebMvcConfigurer {
     // Phan giai view
