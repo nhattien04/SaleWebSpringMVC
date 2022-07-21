@@ -2,14 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.nnt.services.impl;
+package com.nnt.service.impl;
 
 import com.nnt.pojo.Category;
 import com.nnt.repository.CategoryRepository;
-import com.nnt.services.CategoryService;
+import com.nnt.service.CategoryService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 /**
@@ -24,5 +23,5 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<Category> getCategories() {
         return this.categoryRepository.getCategories();
-    }   
+    }
 }

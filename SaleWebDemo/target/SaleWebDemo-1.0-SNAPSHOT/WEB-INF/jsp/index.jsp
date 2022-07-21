@@ -5,6 +5,8 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -27,8 +29,11 @@
                             <a class="nav-link" href="javascript:void(0)">&#128293; Trang chủ</a>
                         </li>
                         <c:forEach items="${categories}" var="c">
+                            <c:url value="/" var="cUrl">
+                                <c:param name="cateId" value="${c.id}" />
+                            </c:url>
                             <li class="nav-item">
-                                <a class="nav-link" href="javascript:void(0)">${c}</a>
+                                <a class="nav-link" href="${cUrl}">${c.name}</a>
                             </li>
                         </c:forEach>
                     </ul>
@@ -49,12 +54,12 @@
 <div class="container-fluid">
             <div class="row">
                 <c:forEach items="${products}" var="p">
-                    <div class="col-md-3 col-12" style="padding:20px;">
-                        <div class="card" style="width:250px">
-                            <img class="card-img-top img-fluid" src="https://res.cloudinary.com/ou-hcm/image/upload/v1657708646/ipad-pro-m1-11-inch-wifi-bac-thumb-600x600_nt4mmn.jpg" alt="Card image">
+                    <div class="col-md-3 col-xs-12" style="padding: 5px;">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="https://res.cloudinary.com/ou-hcm/image/upload/v1658410958/iphone-13-pro-aar-xanh-la-didongviet_vqtz8n.jpg" alt="Card image">
                             <div class="card-body">
-                                <h4 class="card-title">${p}</h4>
-                                <p class="card-text">24.000.000 VNĐ</p>
+                                <h4 class="card-title">${p.name}</h4>
+                                <p class="card-text">${p.price}</p>
                                 <a href="#" class="btn btn-primary">Xem chi tiết</a>
                             </div>
                         </div>

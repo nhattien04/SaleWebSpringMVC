@@ -9,18 +9,19 @@ import javax.sql.DataSource;
 import static org.hibernate.cfg.AvailableSettings.DIALECT;
 import static org.hibernate.cfg.AvailableSettings.SHOW_SQL;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 /**
  *
  * @author NhatTien
  */
-@Configurable // Rỗ chứa Bean
+@Configuration // Rỗ chứa Bean
 @PropertySource("classpath:databases.properties")
 public class HibernateConfig {
 
@@ -60,4 +61,17 @@ public class HibernateConfig {
         props.put(SHOW_SQL, env.getProperty("hibernate.showSql"));
         return props;
     }
+    
+    @Bean
+    public HibernateTransactionManager transactionManager() {
+        HibernateTransactionManager transactionManager
+                = new HibernateTransactionManager();
+        transactionManager.setSessionFactory(
+                getSessionFactory().getObject());
+        return transactionManager;
+    }
+    
+//    <c:url value="/" var="cUrl">
+//                                <c:param name="cateId" value="${c.id}" />
+//                            </c:url>
 }

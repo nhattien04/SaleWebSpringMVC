@@ -2,15 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package com.nnt.repository;
+package com.nnt.service;
 
-import com.nnt.pojo.Category;
+import com.nnt.pojo.Product;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author NhatTien
  */
-public interface CategoryRepository {
-    List<Category> getCategories();
+public interface ProductService {
+    List<Product> getProducts(Map<String, String> params, int page);
 }
