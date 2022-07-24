@@ -64,6 +64,12 @@ public class ProductRepositoryImpl implements ProductRepository {
             Predicate p = b.lessThanOrEqualTo(root.get("price").as(Long.class), Long.parseLong(toPrice));
             predicates.add(p);
         }
+        
+        String cateId = params.get("cateId"); // Lay /cateId tren link
+        if (cateId != null) {
+            Predicate p = b.equal(root.get("categoryId"), Integer.parseInt(cateId)); // categoryId la doi tuong của Lop Product trong pojo
+            predicates.add(p);
+        }
 
         q.where((Predicate[]) predicates.toArray(Predicate[]::new));
 

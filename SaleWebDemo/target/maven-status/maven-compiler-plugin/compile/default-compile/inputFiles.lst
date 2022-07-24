@@ -1,17 +1,17 @@
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\pojo\User.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\controllers\IndexController.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\repository\CategoryRepository.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\service\impl\CategoryServiceImpl.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\configs\HibernateConfig.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\pojo\Product.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\pojo\SaleOrder.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\service\impl\ProductServiceImpl.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\service\ProductService.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\repository\ProductRepository.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\configs\DispatcherServletInit.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\pojo\OrderDetail.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\service\CategoryService.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\repository\impl\CategoryRepositoryImpl.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\pojo\Category.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\repository\impl\ProductRepositoryImpl.java
-D:\Thuc_Hanh_LT_Java\New folder\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\configs\WebAppContextConfig.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\controllers\IndexController.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\configs\HibernateConfig.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\pojo\Product.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\configs\WebAppContextConfig.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\pojo\User.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\pojo\SaleOrder.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\repository\impl\ProductRepositoryImpl.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\pojo\OrderDetail.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\repository\ProductRepository.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\service\impl\CategoryServiceImpl.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\service\ProductService.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\repository\impl\CategoryRepositoryImpl.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\pojo\Category.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\service\CategoryService.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\service\impl\ProductServiceImpl.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\configs\DispatcherServletInit.java
+D:\Thuc_Hanh_LT_Java\SaleWeb\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\repository\CategoryRepository.java

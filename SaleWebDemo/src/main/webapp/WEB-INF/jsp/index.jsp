@@ -37,29 +37,34 @@
                             </li>
                         </c:forEach>
                     </ul>
-                    
+
                     <c:url value="/" var="action"/>
                     <form class="d-flex" method="get" action="${action}">
-<!--                        method-->
-<!--                        action-->
+                        <!--                        method-->
+                        <!--                        action-->
                         <input class="form-control me-2" type="text" name="kw" placeholder="Nhập từ khóa">
-<!--                        name-->
+                        <!--                        name-->
                         <button type="submit" class="btn btn-primary" type="button">Tìm</button>
-<!--                        type-->
+                        <!--                        type-->
                     </form>
                 </div>
             </div>
         </nav>
 
-<div class="container-fluid">
+        <div class="container-fluid">
+            <c:if test="${products.size() == 0}">
+                <p class="alert-danger"><em>Không có sản phẩm nào!</em></p>
+            </c:if>
             <div class="row">
                 <c:forEach items="${products}" var="p">
                     <div class="col-md-3 col-xs-12" style="padding: 5px;">
                         <div class="card">
                             <img class="card-img-top img-fluid" src="https://res.cloudinary.com/ou-hcm/image/upload/v1658410958/iphone-13-pro-aar-xanh-la-didongviet_vqtz8n.jpg" alt="Card image">
                             <div class="card-body">
-                                <h4 class="card-title">${p.name}</h4>
-                                <p class="card-text">${p.price}</p>
+                                <h4 class="card-title">${p.name}</h4>  
+                                <p class="card-text">
+                                    <fmt:formatNumber type="number" maxFractionDigits="3" value="${p.price}" /> VND
+                                </p>
                                 <a href="#" class="btn btn-primary">Xem chi tiết</a>
                             </div>
                         </div>
