@@ -70,8 +70,4 @@ public class HibernateConfig {
                 getSessionFactory().getObject());
         return transactionManager;
     }
-    
-//    <c:url value="/" var="cUrl">
-//                                <c:param name="cateId" value="${c.id}" />
-//                            </c:url>
 }
