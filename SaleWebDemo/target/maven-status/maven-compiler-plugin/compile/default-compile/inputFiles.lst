@@ -4,6 +4,8 @@ D:\Thuc_Hanh_LT_Java\SaleWebDemo\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java
 D:\Thuc_Hanh_LT_Java\SaleWebDemo\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\configs\DispatcherServletInit.java
 D:\Thuc_Hanh_LT_Java\SaleWebDemo\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\service\ProductService.java
 D:\Thuc_Hanh_LT_Java\SaleWebDemo\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\service\impl\CategoryServiceImpl.java
+D:\Thuc_Hanh_LT_Java\SaleWebDemo\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\configs\TilesConfig.java
+D:\Thuc_Hanh_LT_Java\SaleWebDemo\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\controllers\AdminController.java
 D:\Thuc_Hanh_LT_Java\SaleWebDemo\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\repository\ProductRepository.java
 D:\Thuc_Hanh_LT_Java\SaleWebDemo\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\repository\CategoryRepository.java
 D:\Thuc_Hanh_LT_Java\SaleWebDemo\SaleWebDemo_SpringMVC\SaleWebDemo\src\main\java\com\nnt\service\impl\ProductServiceImpl.java

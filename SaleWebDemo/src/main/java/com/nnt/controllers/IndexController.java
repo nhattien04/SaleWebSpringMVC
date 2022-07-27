@@ -11,9 +11,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -22,6 +25,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author NhatTien
  */
 @Controller
+@ControllerAdvice // Chuyen qua cac Controller khac van duy tri duoc thong tin chung
+@PropertySource("classpath:messages.properties")
 public class IndexController {
     @Autowired
     private CategoryService categoryService;
@@ -31,6 +36,11 @@ public class IndexController {
     
     @Autowired
     private Environment env;
+    
+    @ModelAttribute
+    public void commonAttr(Model model) {
+        model.addAttribute("categories", this.categoryService.getCategories());
+    }
     
     @RequestMapping("/")
     public String index(Model model,
@@ -43,7 +53,6 @@ public class IndexController {
 //        model.addAttribute("categories", categories);
 
 //        Do du lieu tu Repository sang Controller
-        model.addAttribute("categories", this.categoryService.getCategories());
         
         int page = Integer.parseInt(params.getOrDefault("page", "1"));
         model.addAttribute("products", this.productService.getProducts(params, page));
