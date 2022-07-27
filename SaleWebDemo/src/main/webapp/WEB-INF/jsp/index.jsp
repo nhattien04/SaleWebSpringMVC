@@ -12,9 +12,20 @@
 <c:if test="${products.size() == 0}">
     <p class="alert-danger"><em>Không có sản phẩm nào!</em></p>
 </c:if>
-<div class="row">
+
+<!--    Phan trang-->
+<ul class="pagination" style="margin-left: 50px; margin-top: 10px;">
+    <c:forEach begin="1" end="${Math.ceil(productsCount / pageSize)}" var="i">
+        <c:url value="/" var="u">
+            <c:param name="page" value="${i}" />
+        </c:url>
+        <li class="page-item"><a class="page-link" href="${u}">Trang ${i}</a></li>
+    </c:forEach>
+</ul>
+
+<div class="row" style="margin: 50px;">
     <c:forEach items="${products}" var="p">
-        <div class="col-md-3 col-xs-12" style="padding: 5px;">
+        <div class="col-md-3 col-xs-12" style="padding: 20px;">
             <div class="card">
                 <img class="card-img-top img-fluid" src="https://res.cloudinary.com/ou-hcm/image/upload/v1658410958/iphone-13-pro-aar-xanh-la-didongviet_vqtz8n.jpg" alt="Card image">
                 <div class="card-body">

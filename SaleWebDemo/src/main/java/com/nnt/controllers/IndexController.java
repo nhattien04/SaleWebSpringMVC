@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +29,9 @@ public class IndexController {
     @Autowired
     private ProductService productService;
     
-
+    @Autowired
+    private Environment env;
+    
     @RequestMapping("/")
     public String index(Model model,
             @RequestParam Map<String, String> params) {
@@ -37,9 +40,16 @@ public class IndexController {
 //        categories.add("Tablet");
 //        categories.add("Desktop");
 //
-//        model.addAttribute("categories", categories);   
+//        model.addAttribute("categories", categories);
+
+//        Do du lieu tu Repository sang Controller
         model.addAttribute("categories", this.categoryService.getCategories());
-        model.addAttribute("products", this.productService.getProducts(params, 0));
+        
+        int page = Integer.parseInt(params.getOrDefault("page", "1"));
+        model.addAttribute("products", this.productService.getProducts(params, page));
+         
+        model.addAttribute("productsCount", this.productService.countProducts());
+        model.addAttribute("pageSize", env.getProperty("page.size"));
 
 //        List<String> products = new ArrayList<>();
 //        products.add("iPhone 13 Pro Max");

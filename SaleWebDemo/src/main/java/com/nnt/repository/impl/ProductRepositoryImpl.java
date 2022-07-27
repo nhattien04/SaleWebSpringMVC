@@ -28,7 +28,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository
 @Transactional
-@PropertySource("classpath:databases.properties")
+@PropertySource("classpath:messages.properties")
 public class ProductRepositoryImpl implements ProductRepository {
 
     @Autowired
@@ -84,5 +84,13 @@ public class ProductRepositoryImpl implements ProductRepository {
             // Moi lan truy van chi lay so luong san pham theo SIZE ban dau
         }
         return query.getResultList();
+    }
+
+    @Override
+    public int countProducts() {
+        Session session = sessionFactory.getObject().getCurrentSession();
+        Query q = session.createQuery("SELECT Count(*) FROM Product");
+        
+        return Integer.parseInt(q.getSingleResult().toString());
     }
 }
