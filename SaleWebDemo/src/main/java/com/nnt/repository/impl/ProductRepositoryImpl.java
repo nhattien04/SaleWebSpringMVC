@@ -44,34 +44,36 @@ public class ProductRepositoryImpl implements ProductRepository {
         CriteriaQuery<Product> q = b.createQuery(Product.class);
         Root<Product> root = q.from(Product.class);
         q.select(root);
-
-        List<Predicate> predicates = new ArrayList<>();
-
-        String kw = params.get("kw");
-        if (kw != null && !kw.isEmpty()) {
-            Predicate p = b.like(root.get("name").as(String.class), String.format("%%%s%%", kw));
-            predicates.add(p);
-        }
-
-        String fromPrice = params.get("fromprice");
-        if (fromPrice != null) {
-            Predicate p = b.greaterThanOrEqualTo(root.get("price").as(Long.class), Long.parseLong(fromPrice));
-            predicates.add(p);
-        }
-
-        String toPrice = params.get("toprice");
-        if (toPrice != null) {
-            Predicate p = b.lessThanOrEqualTo(root.get("price").as(Long.class), Long.parseLong(toPrice));
-            predicates.add(p);
-        }
         
-        String cateId = params.get("cateId"); // Lay /cateId tren link
-        if (cateId != null) {
-            Predicate p = b.equal(root.get("categoryId"), Integer.parseInt(cateId)); // categoryId la doi tuong của Lop Product trong pojo
-            predicates.add(p);
-        }
+        if (params != null) {
+            List<Predicate> predicates = new ArrayList<>();
 
-        q.where((Predicate[]) predicates.toArray(Predicate[]::new));
+            String kw = params.get("kw");
+            if (kw != null && !kw.isEmpty()) {
+                Predicate p = b.like(root.get("name").as(String.class), String.format("%%%s%%", kw));
+                predicates.add(p);
+            }
+
+            String fromPrice = params.get("fromprice");
+            if (fromPrice != null) {
+                Predicate p = b.greaterThanOrEqualTo(root.get("price").as(Long.class), Long.parseLong(fromPrice));
+                predicates.add(p);
+            }
+
+            String toPrice = params.get("toprice");
+            if (toPrice != null) {
+                Predicate p = b.lessThanOrEqualTo(root.get("price").as(Long.class), Long.parseLong(toPrice));
+                predicates.add(p);
+            }
+
+            String cateId = params.get("cateId"); // Lay /cateId tren link
+            if (cateId != null) {
+                Predicate p = b.equal(root.get("categoryId"), Integer.parseInt(cateId)); // categoryId la doi tuong của Lop Product trong pojo
+                predicates.add(p);
+            }
+
+            q.where((Predicate[]) predicates.toArray(Predicate[]::new));
+        }
 
         // Phan trang
         Query query = session.createQuery(q);
