@@ -38,6 +38,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public boolean addProduct(Product p) {
+        p.setImage("https://res.cloudinary.com/ou-hcm/image/upload/v1657708646/ipad-pro-m1-11-inch-wifi-bac-thumb-600x600_nt4mmn.jpg");
         return this.productRepository.addProduct(p);
     }
 }

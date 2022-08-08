@@ -10,6 +10,7 @@ com\nnt\pojo\Category_.class
 com\nnt\pojo\Product.class
 com\nnt\service\CategoryService.class
 com\nnt\repository\ProductRepository.class
+com\nnt\formatter\CategoryFormatter.class
 com\nnt\configs\HibernateConfig.class
 com\nnt\pojo\Product_.class
 com\nnt\pojo\SaleOrder.class

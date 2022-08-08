@@ -12,20 +12,24 @@
 
 <c:url value="/admin/products" var="action" />
 <form:form method="post" action="${action}" modelAttribute="product">
+    <form:errors path="*" cssClass="alert alert-danger" element="div" />
+    
     <div class="form-floating mb-3 mt-3">
         <form:input path="name" type="text" class="form-control" id="name" placeholder="name" name="name" />
         <label for="name">Tên sản phẩm</label>
     </div>
+        
     <div class="form-floating mb-3 mt-3">
         <form:input path="price" type="number" class="form-control" id="price" placeholder="price" name="price" />
-        <label for="name">Giá</label>
+        <label for="price">Giá</label>
     </div>
+        
     <div class="form-floating">
-        <select path="categotyId" class="form-select" id="cate" name="cate">
+        <form:select path="categoryId" class="form-select" id="cate" name="cate">
             <c:forEach items="${categories}" var="c">
                 <option value="${c.id}">${c.name}</option>
             </c:forEach>
-        </select>
+        </form:select>
         <label for="cate" class="form-label">Danh mục</label>
     </div>
     <br>
