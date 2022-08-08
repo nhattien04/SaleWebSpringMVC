@@ -30,4 +30,14 @@ public class ProductServiceImpl implements ProductService {
     public int countProducts() {
         return this.productRepository.countProducts();
     }
+
+    @Override
+    public boolean deleteProduct(int id) {
+        return this.productRepository.deleteProduct(id);
+    }
+
+    @Override
+    public boolean addProduct(Product p) {
+        return this.productRepository.addProduct(p);
+    }
 }
