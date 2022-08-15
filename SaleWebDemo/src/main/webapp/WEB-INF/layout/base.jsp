@@ -19,7 +19,7 @@
     <body>
         <tiles:insertAttribute name="header" />
         
-        <div>
+        <div class="container">
             <tiles:insertAttribute name="content" />
         </div>
         

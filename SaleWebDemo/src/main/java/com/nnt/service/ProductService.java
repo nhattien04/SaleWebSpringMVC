@@ -17,4 +17,5 @@ public interface ProductService {
     int countProducts();
     boolean deleteProduct(int id);
     boolean addProduct(Product p);
+    List<Object[]> countProductByCate();
 }

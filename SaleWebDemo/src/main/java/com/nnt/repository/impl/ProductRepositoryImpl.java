@@ -4,6 +4,7 @@
  */
 package com.nnt.repository.impl;
 
+import com.nnt.pojo.Category;
 import com.nnt.pojo.Product;
 import com.nnt.repository.ProductRepository;
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class ProductRepositoryImpl implements ProductRepository {
         CriteriaQuery<Product> q = b.createQuery(Product.class);
         Root<Product> root = q.from(Product.class);
         q.select(root);
-        
+
         if (params != null) {
             List<Predicate> predicates = new ArrayList<>();
 
@@ -92,7 +93,7 @@ public class ProductRepositoryImpl implements ProductRepository {
     public int countProducts() {
         Session session = sessionFactory.getObject().getCurrentSession();
         Query q = session.createQuery("SELECT Count(*) FROM Product");
-        
+
         return Integer.parseInt(q.getSingleResult().toString());
     }
 
@@ -100,14 +101,14 @@ public class ProductRepositoryImpl implements ProductRepository {
     public boolean deleteProduct(int id) {
         try {
             Session session = sessionFactory.getObject().getCurrentSession();
-            Product p =  session.get(Product.class, id);
+            Product p = session.get(Product.class, id);
             session.delete(p);
-            
+
             return true;
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
             return false;
-        }  
+        }
     }
 
     @Override
@@ -115,11 +116,28 @@ public class ProductRepositoryImpl implements ProductRepository {
         Session session = this.sessionFactory.getObject().getCurrentSession();
         try {
             session.save(p);
-            
+
             return true;
         } catch (Exception ex) {
             ex.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public List<Object[]> countProductByCate() {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder b = session.getCriteriaBuilder();
+        CriteriaQuery<Object[]> q = b.createQuery(Object[].class);
+        
+        Root rP = q.from(Product.class);
+        Root rC = q.from(Category.class);
+        
+        q.where(b.equal(rP.get("categoryId"), rC.get("id")));
+        q.multiselect(rC.get("id"), rC.get("name"), b.count(rP.get("id")));
+        q.groupBy(rC.get("id"));
+        
+        Query query = session.createQuery(q);
+        return query.getResultList();
     }
 }

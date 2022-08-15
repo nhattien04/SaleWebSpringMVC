@@ -44,4 +44,10 @@ public class AdminController {
         
         return "products";
     }
+    
+    @GetMapping("/stats")
+    public String stats(Model model) {
+        model.addAttribute("stats", this.productService.countProductByCate());
+        return "stats";
+    }
 }
