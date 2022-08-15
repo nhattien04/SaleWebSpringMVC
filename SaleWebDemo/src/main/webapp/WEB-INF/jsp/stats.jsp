@@ -29,5 +29,21 @@
             </c:forEach>
         </table>
     </div>
-    <div class="col-md-6 col-xs-12"></div>   
+    <div class="col-md-6 col-xs-12">
+        <canvas id="myChart"></canvas>
+    </div>   
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="<c:url value="/js/stats.js" />"></script>
+<script>
+    window.onload = function () {
+        let data = [];
+        let labels = [];
+    <c:forEach items="${stats}" var="c">
+        data.push(${c[2]});
+        labels.push("${c[1]}");
+    </c:forEach>
+        loadCateChart(data, labels);
+    }
+</script>
