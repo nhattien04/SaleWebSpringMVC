@@ -44,7 +44,7 @@ function getProducts(endpoint) {
                     <td>${data[i].price}</td>
                     <td>
                         <div class="spinner-border text-info" style="display:none" id="load${data[i].id}"></div>
-                        <button class="btn btn-danger" onclick="deleteProduct('${endpoint + "/" + data[i].id}', ${data[i].id}, this)">Xoa</button>
+                        <button class="btn btn-danger" onclick="deleteProduct('${endpoint + "/" + data[i].id}', ${data[i].id}, this)">Xóa</button>
                     </td>
                 </tr>
             `;

@@ -33,15 +33,15 @@ public class AdminController {
     }
     
     @PostMapping("/products")
-    public String add(Model model, 
-            @ModelAttribute(value = "product") @Valid Product p, 
+    public String add(@ModelAttribute(value = "product") @Valid Product p,
             BindingResult r) {
         if (r.hasErrors()) {
             return "products";
         }
-        if (this.productService.addProduct(p) == true) {
+        
+        if (this.productService.addProduct(p) == true)
             return "redirect:/";
-        }
+        
         return "products";
     }
 }

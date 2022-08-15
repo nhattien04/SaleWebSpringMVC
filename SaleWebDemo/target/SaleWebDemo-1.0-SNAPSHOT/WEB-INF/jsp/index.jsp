@@ -27,7 +27,7 @@
     <c:forEach items="${products}" var="p">
         <div class="col-md-3 col-xs-12" style="padding: 20px;">
             <div class="card">
-                <img class="card-img-top img-fluid" src="${p.image}" alt="Card image">
+                <img class="card-img-top img-fluid" src="https://res.cloudinary.com/ou-hcm/image/upload/v1658393378/image-removebg-preview-15_gncvzf.png" alt="Card image">
                 <div class="card-body">
                     <h4 class="card-title">${p.name}</h4>  
                     <p class="card-text">

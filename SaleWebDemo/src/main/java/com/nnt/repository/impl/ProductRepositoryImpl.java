@@ -112,14 +112,14 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public boolean addProduct(Product p) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
         try {
-            Session session = sessionFactory.getObject().getCurrentSession();
             session.save(p);
             
             return true;
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
             return false;
-        }  
+        }
     }
 }
