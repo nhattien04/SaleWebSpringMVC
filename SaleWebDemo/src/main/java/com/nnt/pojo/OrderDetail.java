@@ -33,6 +33,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "OrderDetail.findByNum", query = "SELECT o FROM OrderDetail o WHERE o.num = :num")})
 public class OrderDetail implements Serializable {
 
+    @Column(name = "num")
+    private Integer num;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,9 +44,6 @@ public class OrderDetail implements Serializable {
     private Integer id;
     @Column(name = "unit_price")
     private Long unitPrice;
-    @Size(max = 45)
-    @Column(name = "num")
-    private String num;
     @JoinColumn(name = "product_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Product productId;
@@ -74,13 +74,6 @@ public class OrderDetail implements Serializable {
         this.unitPrice = unitPrice;
     }
 
-    public String getNum() {
-        return num;
-    }
-
-    public void setNum(String num) {
-        this.num = num;
-    }
 
     public Product getProductId() {
         return productId;
@@ -121,6 +114,14 @@ public class OrderDetail implements Serializable {
     @Override
     public String toString() {
         return "com.nnt.pojo.OrderDetail[ id=" + id + " ]";
+    }
+
+    public Integer getNum() {
+        return num;
+    }
+
+    public void setNum(Integer num) {
+        this.num = num;
     }
     
 }

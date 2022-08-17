@@ -5,7 +5,9 @@
 package com.nnt.repository.impl;
 
 import com.nnt.pojo.Category;
+import com.nnt.pojo.OrderDetail;
 import com.nnt.pojo.Product;
+import com.nnt.pojo.SaleOrder;
 import com.nnt.repository.ProductRepository;
 import java.util.ArrayList;
 import java.util.List;
@@ -136,6 +138,29 @@ public class ProductRepositoryImpl implements ProductRepository {
         q.where(b.equal(rP.get("categoryId"), rC.get("id")));
         q.multiselect(rC.get("id"), rC.get("name"), b.count(rP.get("id")));
         q.groupBy(rC.get("id"));
+        
+        Query query = session.createQuery(q);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Object[]> revenueStats(int quarter, int year) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder b = session.getCriteriaBuilder();
+        CriteriaQuery<Object[]> q = b.createQuery(Object[].class);
+        
+        Root rP = q.from(Product.class);
+        Root rD = q.from(OrderDetail.class);
+        Root rO = q.from(SaleOrder.class);
+        
+        
+        q.multiselect(rP.get("id"), rP.get("name"), b.sum(b.prod(rD.get("num"), rD.get("unitPrice"))));
+        
+        q.where(b.equal(rP.get("id"), rD.get("productId")),
+                b.equal(rO.get("id"), rD.get("orderId")),
+                b.equal(b.function("QUARTER", Integer.class, rO.get("createdDate")), quarter),
+                b.equal(b.function("YEAR", Integer.class, rO.get("createdDate")), year));
+        q.groupBy(rP.get("id"));
         
         Query query = session.createQuery(q);
         return query.getResultList();

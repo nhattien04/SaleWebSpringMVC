@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -46,8 +47,11 @@ public class AdminController {
     }
     
     @GetMapping("/stats")
-    public String stats(Model model) {
+    public String stats(Model model,
+            @RequestParam(value = "quarter", defaultValue = "0") int quarter,
+            @RequestParam(value = "year", defaultValue = "2022") int year) {
         model.addAttribute("stats", this.productService.countProductByCate());
+        model.addAttribute("revenueStats", this.productService.revenueStats(quarter, year));
         return "stats";
     }
 }

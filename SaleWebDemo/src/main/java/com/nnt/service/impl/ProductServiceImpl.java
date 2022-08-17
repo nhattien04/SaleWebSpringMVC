@@ -46,4 +46,9 @@ public class ProductServiceImpl implements ProductService {
     public List<Object[]> countProductByCate() {
         return this.productRepository.countProductByCate();
     }
+
+    @Override
+    public List<Object[]> revenueStats(int quarter, int year) {
+        return this.productRepository.revenueStats(quarter, year);
+    }
 }
